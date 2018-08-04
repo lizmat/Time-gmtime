@@ -10,7 +10,7 @@ our $tm_wday  is export(:FIELDS);
 our $tm_yday  is export(:FIELDS);
 our $tm_isdst is export(:FIELDS);
 
-class Time::gmtime:ver<0.0.3>:auth<cpan:ELIZABETH> {
+class Time::gmtime:ver<0.0.4>:auth<cpan:ELIZABETH> {
     has Int $.sec;
     has Int $.min;
     has Int $.hour;
