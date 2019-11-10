@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/lizmat/Time-gmtime.svg?branch=master)](https://travis-ci.org/lizmat/Time-gmtime)
-
 NAME
 ====
 
-Time::gmtime - Port of Perl 5's Time::gmtime
+Time::gmtime - Port of Perl's Time::gmtime
 
 SYNOPSIS
 ========
@@ -30,7 +28,7 @@ This module's default exports a `gmtime` and `gmctime` functions. The `gmtime` f
 
 You may also import all the structure fields directly into your namespace as regular variables using the :FIELDS import tag. (Note that this still exports the functions.) Access these fields as variables named with a preceding tm_. Thus, `$group_obj.year` corresponds to `$tm_year` if you import the fields.
 
-The `gmctime` function provides a way of getting at the scalar sense of the `gmtime` function in Perl 5.
+The `gmctime` function provides a way of getting at the scalar sense of the `gmtime` function in Perl.
 
 AUTHOR
 ======
@@ -42,9 +40,9 @@ Source can be located at: https://github.com/lizmat/Time-gmtime . Comments and P
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan.
+Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

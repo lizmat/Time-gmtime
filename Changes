@@ -2,6 +2,9 @@ Revision history for Time-gmtime
 
 {{$NEXT}}
 
+0.0.5  2019-11-10T20:10:57+01:00
+    - Changed Perl 5 to Perl
+
 0.0.4  2018-08-04T13:44:27+02:00
     - Fixed test that would fail if day < 10
 
