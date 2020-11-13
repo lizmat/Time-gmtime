@@ -10,7 +10,7 @@ our $tm_wday  is export(:FIELDS);
 our $tm_yday  is export(:FIELDS);
 our $tm_isdst is export(:FIELDS);
 
-class Time::gmtime:ver<0.0.6>:auth<cpan:ELIZABETH> {
+class Time::gmtime:ver<0.0.7>:auth<cpan:ELIZABETH> {
     has Int $.sec;
     has Int $.min;
     has Int $.hour;
@@ -97,6 +97,12 @@ Thus, C<$group_obj.year> corresponds to C<$tm_year> if you import the fields.
 
 The C<gmctime> function provides a way of getting at the scalar sense of the
 C<gmtime> function in Perl.
+
+=head1 PORTING CAVEATS
+
+This module depends on the availability of POSIX semantics.  This is
+generally not available on Windows, so this module will probably not work
+on Windows.
 
 =head1 AUTHOR
 

@@ -2,6 +2,9 @@ Revision history for Time-gmtime
 
 {{$NEXT}}
 
+0.0.7  2020-11-13T12:48:53+01:00
+    - Add PORTING CAVEATS section about needing POSIX semantics
+
 0.0.6  2020-11-13T12:37:59+01:00
     - Change name of distribution
     - Force to highest possible Raku version

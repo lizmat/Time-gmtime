@@ -32,6 +32,11 @@ You may also import all the structure fields directly into your namespace as reg
 
 The `gmctime` function provides a way of getting at the scalar sense of the `gmtime` function in Perl.
 
+PORTING CAVEATS
+===============
+
+This module depends on the availability of POSIX semantics. This is generally not available on Windows, so this module will probably not work on Windows.
+
 AUTHOR
 ======
 
