@@ -7,3 +7,4 @@
 .precomp/
 /releases/
 /Time-gmtime-*
+/lib/P5localtime.pm6

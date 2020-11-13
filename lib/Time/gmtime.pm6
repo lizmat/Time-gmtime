@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 
 our $tm_sec   is export(:FIELDS);
 our $tm_min   is export(:FIELDS);
@@ -10,7 +10,7 @@ our $tm_wday  is export(:FIELDS);
 our $tm_yday  is export(:FIELDS);
 our $tm_isdst is export(:FIELDS);
 
-class Time::gmtime:ver<0.0.5>:auth<cpan:ELIZABETH> {
+class Time::gmtime:ver<0.0.6>:auth<cpan:ELIZABETH> {
     has Int $.sec;
     has Int $.min;
     has Int $.hour;
@@ -44,12 +44,13 @@ sub populate(@fields) {
 }
 
 my sub gmtime(Int() $time = time) is export(:DEFAULT:FIELDS) {
-    use P5localtime; populate(gmtime($time))
+    use P5localtime:ver<0.0.8>:auth<cpan:ELIZABETH>;
+    populate(gmtime($time))
 }
 
 my sub gmctime(Int() $time = time) is export(:DEFAULT:FIELDS) {
     use NativeCall;
-    use P5localtime;
+    use P5localtime:ver<0.0.8>:auth<cpan:ELIZABETH>;
     my sub get-ctime(int64 is rw --> Str) is native is symbol<ctime> {*}
 
     my int64 $epoch = $time - localtime($time)[9]; # must be separate definition
@@ -60,7 +61,7 @@ my sub gmctime(Int() $time = time) is export(:DEFAULT:FIELDS) {
 
 =head1 NAME
 
-Time::gmtime - Port of Perl's Time::gmtime
+Raku port of Perl's Time::gmtime module
 
 =head1 SYNOPSIS
 
@@ -80,6 +81,9 @@ Time::gmtime - Port of Perl's Time::gmtime
     $date_string = gmctime($file.IO.modified);
 
 =head1 DESCRIPTION
+
+This module tries to mimic the behaviour of Perl's C<Time::gmtime> module
+as closely as possible in the Raku Programming Language.
 
 This module's default exports a C<gmtime> and C<gmctime> functions. The
 C<gmtime> function returns a "Time::gmtime" object.  This object has methods
@@ -103,7 +107,7 @@ and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
@@ -111,4 +115,4 @@ This library is free software; you can redistribute it and/or modify it under th
 
 =end pod
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

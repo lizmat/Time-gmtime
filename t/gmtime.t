@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use Time::gmtime;
 
@@ -27,4 +27,4 @@ sub ok-gmctime($t, $what) {
 ok-gmctime gmctime, 'gmtime string';
 ok-gmctime gmctime(1527362356), 'gmtime(1527362356) string';
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

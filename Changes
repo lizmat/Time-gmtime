@@ -2,6 +2,12 @@ Revision history for Time-gmtime
 
 {{$NEXT}}
 
+0.0.6  2020-11-13T12:37:59+01:00
+    - Change name of distribution
+    - Force to highest possible Raku version
+    - Update copyright year
+    - Tighten up dependency on P5localtime
+
 0.0.5  2019-11-10T20:10:57+01:00
     - Changed Perl 5 to Perl
 

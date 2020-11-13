@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use Time::gmtime :FIELDS;
 
@@ -21,4 +21,4 @@ ok-gmtime 'gmtime';
 gmtime(1527362356);
 ok-gmtime 'gmtime(1527362356)';
 
-# vim: ft=perl6 expandtab sw=4
+# vim: expandtab shiftwidth=4

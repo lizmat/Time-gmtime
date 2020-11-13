@@ -1,7 +1,7 @@
 NAME
 ====
 
-Time::gmtime - Port of Perl's Time::gmtime
+Raku port of Perl's Time::gmtime module
 
 SYNOPSIS
 ========
@@ -24,6 +24,8 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
+This module tries to mimic the behaviour of Perl's `Time::gmtime` module as closely as possible in the Raku Programming Language.
+
 This module's default exports a `gmtime` and `gmctime` functions. The `gmtime` function returns a "Time::gmtime" object. This object has methods that return the similarly named structure field name from the C's tm structure from time.h; namely sec, min, hour, mday, mon, year, wday, yday, and isdst.
 
 You may also import all the structure fields directly into your namespace as regular variables using the :FIELDS import tag. (Note that this still exports the functions.) Access these fields as variables named with a preceding tm_. Thus, `$group_obj.year` corresponds to `$tm_year` if you import the fields.
@@ -40,7 +42,7 @@ Source can be located at: https://github.com/lizmat/Time-gmtime . Comments and P
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
