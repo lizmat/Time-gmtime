@@ -10,7 +10,7 @@ our $tm_wday  is export(:FIELDS);
 our $tm_yday  is export(:FIELDS);
 our $tm_isdst is export(:FIELDS);
 
-class Time::gmtime:ver<0.0.7>:auth<cpan:ELIZABETH> {
+class Time::gmtime:ver<0.0.8>:auth<zef:lizmat> {
     has Int $.sec;
     has Int $.min;
     has Int $.hour;
@@ -44,13 +44,13 @@ sub populate(@fields) {
 }
 
 my sub gmtime(Int() $time = time) is export(:DEFAULT:FIELDS) {
-    use P5localtime:ver<0.0.8>:auth<cpan:ELIZABETH>;
+    use P5localtime:ver<0.0.9>:auth<zef:lizmat>;
     populate(gmtime($time))
 }
 
 my sub gmctime(Int() $time = time) is export(:DEFAULT:FIELDS) {
     use NativeCall;
-    use P5localtime:ver<0.0.8>:auth<cpan:ELIZABETH>;
+    use P5localtime:ver<0.0.9>:auth<zef:lizmat>;
     my sub get-ctime(int64 is rw --> Str) is native is symbol<ctime> {*}
 
     my int64 $epoch = $time - localtime($time)[9]; # must be separate definition
@@ -106,14 +106,14 @@ on Windows.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/Time-gmtime . Comments
 and Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
